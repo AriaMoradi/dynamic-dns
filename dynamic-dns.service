@@ -1,0 +1,14 @@
+[Unit]
+Description=Dynamic DNS Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/python3 /usr/bin/dynamic_dns.py
+
+[Install]
+WantedBy=multi-user.target
